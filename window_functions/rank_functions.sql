@@ -56,3 +56,20 @@ SUM(Sales) AS CurrentMonthSales,
 LAG(SUM(Sales)) OVER(ORDER BY MONTH(OrderDate) DESC) AS previousMonthSales
 FROM Orders
 GROUP BY MONTH(OrderDate) ) t;
+
+-- in order to analyze customer loyalty, rank customers based on their average days between their orders 
+SELECT 
+customerId,
+AVG(DaysBetweenOrders) AS AvgDaysBetweenOrders,
+RANK() OVER(ORDER BY COALESCE((DaysBetweenOrders) ASC, 9999)) AS LoyaltyRank
+FROM(
+SELECT 
+orderId,
+customerId
+orderDate AS current_date,
+LEAD(orderDate) OVER(PARTITION BY customerId ORDER BY orderDate) AS next_order_date,
+DATEDIFF(DAY, orderDate, LEAD(orderDate) OVER(PARTITION BY customerId ORDER BY orderDate)) AS days_between_orders
+FROM Sales.Orders
+) t
+GROUP BY customerId;
+
