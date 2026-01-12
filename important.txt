@@ -1,0 +1,51 @@
+🔁 The 10 SQL Patterns That Actually Matter
+1️⃣ Duplicates
+🔍 GROUP BY + HAVING COUNT(*) > 1
+
+2️⃣ Top N Records
+🏆 ORDER BY + LIMIT
+🏆 DENSE_RANK()
+
+3️⃣ Missing Relationships
+🧩 LEFT JOIN + IS NULL
+🧩 NOT EXISTS
+
+4️⃣ Aggregation
+📊 SUM, AVG, COUNT with GROUP BY
+📊 Filtering with HAVING
+
+5️⃣ Latest Record per Group
+🕒 MAX() + GROUP BY
+🕒 ROW_NUMBER()
+
+6️⃣ Date Filtering
+📅 BETWEEN, YEAR(), DATE_TRUNC
+
+7️⃣ Set Operations
+🔀 UNION, EXCEPT, INTERSECT
+
+8️⃣ Window Functions
+🪟 ROW_NUMBER(), RANK()
+
+9️⃣ Conditional Aggregation
+🧠 CASE WHEN + SUM()
+
+🔟 Self Joins
+🔁 Joining a table to itself
+
+⚡ How Interviews Combine These Patterns
+
+➡️ Duplicates + Dates
+“Find duplicate transactions this month”
+
+➡️ Joins + Set Logic
+“Users who clicked ads but never purchased”
+
+➡️ Top N + Aggregation
+“Top 10 revenue-generating stores by region”
+
+➡️ Latest Record + Join
+“Each customer’s most recent support ticket”
+
+➡️ Date Filters + Counts
+“Daily active users for the last 30 days”
