@@ -16,3 +16,6 @@ CASE
 ) t 
 WHERE temp_diff = 'Y'
 AND recordDate = previous_day + INTERVAL '1 day';
+
+-- JOINs show correctness. Window functions show sophistication.
+--Correctness always matters more.
