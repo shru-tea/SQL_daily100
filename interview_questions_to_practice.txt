@@ -1,0 +1,2 @@
+1️⃣ Write a SQL query to detect overlapping subscription periods for the same user.
+2️⃣ Rank the top 3 departments (with ≥10 employees) by % of staff earning more than 100K.

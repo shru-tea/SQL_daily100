@@ -31,3 +31,15 @@ ON jl1.company_id = jl2.company_id
 WHERE jl1.job_id < jl2.job_id 
 AND jl1.title=jl2.title 
 AND jl1.description = jl2.description
+
+SELECT
+COUNT(DISTINCT company_id) as identical_companies
+FROM (
+SELECT 
+company_id,
+title,
+description,
+COUNT(*) AS duplicate_ids
+FROM table_ddl.job_listings
+GROUP BY company_id, title, description ) t 
+WHERE duplicate_ids>1

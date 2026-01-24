@@ -24,3 +24,5 @@ MAX(CASE WHEN price_date = '2023-11-25' THEN price END) AS black_friday_price
 FROM table_ddl.black_friday_sales
 GROUP BY product_name) t
 WHERE black_friday_price is NOT NULL
+
+

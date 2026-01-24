@@ -19,3 +19,15 @@ AND recordDate = previous_day + INTERVAL '1 day';
 
 -- JOINs show correctness. Window functions show sophistication.
 --Correctness always matters more.
+
+SELECT
+id
+FROM
+(SELECT
+*,
+LAG(temperature) OVER(ORDER BY recordDate) AS prev_temp,
+LAG(recordDate) OVER(ORDER BY recordDate) AS prev_day
+FROM weather
+)t 
+WHERE temperature > prev_temp AND recordDate = prev_day + INTERVAL '1 day'
+

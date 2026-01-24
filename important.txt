@@ -49,3 +49,7 @@
 
 ➡️ Date Filters + Counts
 “Daily active users for the last 30 days”
+
+
+If you need to filter based on an aggregate → think subquery first
+If you need to compare each row with a group value → think window function first

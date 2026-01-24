@@ -25,6 +25,10 @@ case of ties, rank() and dense_rank() might yield 3 or 4 highest grossing produc
  rather than the top 2. Row_number() would result in exactly 2 products.
 */
 
+
+-- STEP 1 : Calculate total spend per product per category using SUM and GROUP BY.
+-- STEP 2: We will RANK/ROW_NUMBER the products within each category based on total spend in descending order.
+-- STEP 3: Filter the results to get only the top two products per category.
 SELECT
 category,
 product,
