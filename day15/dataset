@@ -1,0 +1,75 @@
+-- Departments Table
+-- Departments Table
+CREATE TABLE Departments (
+    dept_id INT PRIMARY KEY,
+    dept_name VARCHAR(50),
+    location VARCHAR(50)
+);
+
+INSERT INTO Departments VALUES
+(10, 'Engineering', 'New York'),
+(20, 'Sales', 'Chicago'),
+(30, 'Marketing', 'San Francisco');
+
+-- Employees Table
+CREATE TABLE Employees (
+    emp_id INT PRIMARY KEY,
+    emp_name VARCHAR(50),
+    dept_id INT,
+    salary DECIMAL(10,2),
+    join_date DATE,
+    manager_id INT,
+    FOREIGN KEY (dept_id) REFERENCES Departments(dept_id),
+    FOREIGN KEY (manager_id) REFERENCES Employees(emp_id)
+);
+
+INSERT INTO Employees VALUES
+(1, 'Alice', 10, 90000, '2020-01-15', 5),
+(2, 'Bob', 20, 60000, '2019-03-22', 6),
+(3, 'Charlie', 10, 120000, '2021-07-01', 5),
+(4, 'David', 30, 75000, '2020-05-20', 7),
+(5, 'Eve', 10, 150000, '2018-11-11', NULL),
+(6, 'Frank', 20, 95000, '2019-06-10', NULL),
+(7, 'Grace', 30, 105000, '2020-08-25', NULL),
+(8, 'Heidi', 10, 90000, '2021-12-01', 5),
+(9, 'Ivan', 20, 60000, '2022-01-10', 6),
+(10, 'Judy', 30, 80000, '2022-02-15', 7);
+
+
+Select all employees who joined after 2020-01-01.
+List all employees along with their department names.
+Find employees with salary greater than 100000.
+Total salary per department.
+Average, min, max salary per department.
+Departments with more than 2 employees.
+Count employees joined per month.
+Employees whose salary is above department average.
+Employees along with their manager names.
+Employees without a manager.
+Employees not assigned to any department.
+Departments without employees.
+Employees earning more than their manager.
+Top 2 highest-paid employees per department.
+Second highest salary per department
+
+Running total of salary per department.
+Rank employees by salary within each department.
+Detect duplicate salaries per department
+Employees with salary higher than department average.
+Departments with average salary > 90000 
+Employees who joined after last join date of their department.
+Employees joined in the last 1 year.
+Tenure of each employee in years.
+Monthly new join count per department.
+Employees who joined on the same day as their manager.
+Rolling 3-month join counts per department.
+Categorize employees: High (>100K), Medium (70K–100K), Low (<70K).
+Flag employees eligible for bonus (< department average).
+Salary difference from manager.
+Assign departments to regions.
+Identify employees at risk (salary < 70000).
+Identify duplicate employee records.
+Remove duplicates but keep latest record per employee.
+Employees with missing departments.
+Invalid salaries (NULL or negative).
+Orphan manager IDs (manager_id not in emp_id).
